@@ -20,10 +20,10 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ secrets.GHCRUSER }}
-          password: ${{ secrets.DOCKERPASS }}
+          password: ${{ secrets.GHCRPASS }}
 
       - name: Build and push Docker image
         run: |
-          IMAGE_NAME=ghcr.io/${{ github.repository_owner }}/go-ethereum:latest
+          IMAGE_NAME=ghcr.io/${{ secrets.GHCRUSER }}/go-ethereum:latest
           docker build -t $IMAGE_NAME .
           docker push $IMAGE_NAME
