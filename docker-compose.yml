@@ -1,6 +1,6 @@
 services:
   geth-node:
-    image: ghcr.io/${{ secrets.GHCRUSER }}/go-ethereum:latest
+    image: ghcr.io/${GITHUB_USERNAME}/go-ethereum:latest
     container_name: geth-node
     ports:
       - "8545:8545"
