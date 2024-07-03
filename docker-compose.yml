@@ -1,0 +1,27 @@
+services:
+  geth-node:
+    image: ghcr.io/${DOCKER_USERNAME}/go-ethereum:latest
+    container_name: geth-node
+    ports:
+      - "8545:8545"
+      - "8546:8546"
+    volumes:
+      - geth-data:/root/.ethereum
+    command: >
+      --networkid 1337
+      --http
+      --http.addr 0.0.0.0
+      --http.port 8545
+      --http.corsdomain "*"
+      --http.api eth,net,web3
+      --ws
+      --ws.addr 0.0.0.0
+      --ws.port 8546
+      --ws.origins "*"
+      --ws.api eth,net,web3
+      --allow-insecure-unlock
+      --nodiscover
+      --dev
+
+volumes:
+  geth-data:
