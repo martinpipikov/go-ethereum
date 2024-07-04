@@ -5,7 +5,7 @@ module.exports = {
   networks: {
     devnet: {
       url: "http://localhost:8545",
-      accounts: [`0x${process.env.PRIVATE_KEY}`]
+      account: [`0x${process.env.PRIVATE_KEY}`]
     }
   }
 };
