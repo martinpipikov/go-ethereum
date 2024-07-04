@@ -41,12 +41,8 @@ jobs:
         run: npm install
         working-directory: ./BCTASK/hardhat
 
-      - name: Install keythereum
-        run: npm install keythereum
-        working-directory: ./BCTASK/hardhat
-
       - name: Deploy Hardhat contracts
-        run: npx hardhat run scripts/deploy.js --network devnet
+        run: npx hardhat run deploy.js --network devnet
         working-directory: ./BCTASK/hardhat
 
       - name: Build new Docker image with deployed contracts
