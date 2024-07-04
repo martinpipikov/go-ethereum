@@ -1,4 +1,11 @@
-/** @type import('hardhat/config').HardhatUserConfig */
+require("@nomiclabs/hardhat-waffle");
+
 module.exports = {
-  solidity: "0.8.24",
+  solidity: "0.8.4",
+  networks: {
+    devnet: {
+      url: "http://localhost:8545",
+      accounts: [`0x${process.env.PRIVATE_KEY}`]
+    }
+  }
 };
