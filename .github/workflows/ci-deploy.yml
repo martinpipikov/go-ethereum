@@ -30,7 +30,7 @@ jobs:
 
       - name: Run Docker Compose
         run: |
-          GITHUB_USERNAME=${{ secrets.GHCRUSER }} docker-compose up -d
+          GITHUB_USERNAME=${{ github.repository_owner }} docker-compose up -d
 
       - name: Install Node.js
         uses: actions/setup-node@v2
