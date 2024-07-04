@@ -39,11 +39,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./hardhat
+        working-directory: ./BCTASK/hardhat
 
       - name: Deploy Hardhat contracts
         run: npx hardhat run scripts/deploy.js --network devnet
-        working-directory: ./hardhat
+        working-directory: ./BCTASK/hardhat
 
       - name: Build new Docker image with deployed contracts
         run: |
